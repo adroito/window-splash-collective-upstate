@@ -204,7 +204,7 @@
       .field { margin-bottom: 20px; }
       .field label { display: block; font-weight: 700; font-size: 16px; margin-bottom: 6px; }
       .field .hint { display: block; font-weight: 400; font-size: 14px; color: var(--muted); margin-top: 2px; }
-      .field input, .field textarea {
+      .field input, .field select, .field textarea {
         width: 100%; min-height: 54px; padding: 13px 14px;
         font-size: 17px; font-family: inherit; color: var(--ink);
         background: var(--field-bg); border: 1.5px solid var(--line); border-radius: 10px;
@@ -556,7 +556,7 @@
           <div class="trait"><strong>Temporary &amp; removable</strong><p>Goes up for a season, a sale, or an event. Comes off clean when it&rsquo;s over.</p></div>
           <div class="trait"><strong>Weather-resistant</strong><p>Holds up outdoors for as long as the design is meant to run.</p></div>
           <div class="trait"><strong>Custom design, every time</strong><p>No templates. Every design is drawn for one storefront.</p></div>
-          <div class="trait"><strong>Quoted by size &amp; design</strong><p>Price depends on how much glass, how detailed the art, and when you need it. Confirmed before we paint.</p></div>
+          <div class="trait"><strong>Quoted by size &amp; design</strong><p>Price depends on how much glass, how detailed the art, and when you need it. Removal is quoted with the job. Confirmed before we paint.</p></div>
         </div>
 
         <div class="coop">
@@ -592,7 +592,7 @@
             <span class="num">2</span>
             <span class="role">Art</span>
             <h3>The co-op matches an artist</h3>
-            <p>An artist whose style fits your idea takes the job. Price and date are confirmed with you before anything is booked.</p>
+            <p>An artist whose style fits your idea takes the job. You approve the design draft first, then price and date are confirmed before anything is booked.</p>
           </div>
           <div class="step">
             <span class="num">3</span>
@@ -618,7 +618,7 @@
           <span class="dots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
           <h2>Holiday window painting in Upstate SC — window splash examples for every season</h2>
           <p>
-            Example designs only. No store is named, and none of this is past work. Pick a season,
+            Example designs only. Names in mockups are made up, and none of this is past work. Pick a season,
             tell us your message, and we paint your version — in Spartanburg and the Upstate.
           </p>
         </div>
@@ -627,7 +627,7 @@
             <div class="imgwrap"><img src="holiday-christmas.webp" alt="Example mockup of a fake storefront window, hand-painted Christmas design: Merry and Bright in splash lettering, snowfall, wreath and gifts" loading="lazy" /><span class="tag">Example mockup — fake storefront</span></div><div class="body">
               <h3>Christmas window painting in Spartanburg</h3>
               <dl>
-                <div><dt>On the glass</dt><dd>Snowfall on every pane, a wreath on the door, garlands and gifts in the corners, your shop name in big splash lettering.</dd></div>
+                <div><dt>On the glass</dt><dd>Snowfall, holly and berries, snowflakes and hanging ornaments, with a big holiday greeting in splash lettering.</dd></div>
                 <div><dt>The message</dt><dd>Your Christmas sale and gift-shopping hours, readable from the street.</dd></div>
               </dl>
             </div>
@@ -657,7 +657,7 @@
             <div class="imgwrap"><img src="holiday-valentine.webp" alt="Example mockup of a fake storefront window, hand-painted Valentine design: Be Mine in pink script, hearts and roses" loading="lazy" /><span class="tag">Example mockup — fake storefront</span></div><div class="body">
               <h3>Valentine&rsquo;s window splash</h3>
               <dl>
-                <div><dt>On the glass</dt><dd>Big hearts and roses around the door, arrows in the corners, your shop name in script at the center.</dd></div>
+                <div><dt>On the glass</dt><dd>Big hearts and roses, with a script greeting at the center.</dd></div>
                 <div><dt>The message</dt><dd>Flowers, gifts, dinner for two — painted weeks ahead, while people are still deciding.</dd></div>
               </dl>
             </div>
@@ -667,7 +667,7 @@
             <div class="imgwrap"><img src="holiday-spring.webp" alt="Example mockup of a fake storefront window, hand-painted Spring and Easter design: Hello Spring, flowers, butterflies, decorated eggs" loading="lazy" /><span class="tag">Example mockup — fake storefront</span></div><div class="body">
               <h3>Spring &amp; Easter splash</h3>
               <dl>
-                <div><dt>On the glass</dt><dd>Flowers and butterflies, decorated eggs along the sill, fresh lettering in spring colors.</dd></div>
+                <div><dt>On the glass</dt><dd>Flowers and butterflies, with a spring welcome in fresh colors.</dd></div>
                 <div><dt>The message</dt><dd>A spring opening or Easter event — egg hunt dates, new stock in.</dd></div>
               </dl>
             </div>
@@ -677,7 +677,7 @@
             <div class="imgwrap"><img src="holiday-summer.webp" alt="Example mockup of a fake storefront window, hand-painted Summer Sale design: Summer Sale in big bright lettering, sun and waves" loading="lazy" /><span class="tag">Example mockup — fake storefront</span></div><div class="body">
               <h3>Summer sale splash</h3>
               <dl>
-                <div><dt>On the glass</dt><dd>A big sun, waves, bright letters, price bursts around what&rsquo;s in the window.</dd></div>
+                <div><dt>On the glass</dt><dd>Bright letters and price bursts around what&rsquo;s in the window.</dd></div>
                 <div><dt>The message</dt><dd>&ldquo;Summer Sale&rdquo; in letters a driver can read at speed.</dd></div>
               </dl>
             </div>
@@ -904,6 +904,26 @@
               <input id="q-town" name="Town" type="text" autocomplete="address-level2" required />
             </div>
           </div>
+          <div class="field">
+            <label for="q-address">Store address</label>
+            <input id="q-address" name="Store address" type="text" autocomplete="street-address" required />
+          </div>
+          <div class="grid-2">
+            <div class="field">
+              <label for="q-photo">Window photo link
+                <span class="hint">Optional — a photo link helps the quote</span>
+              </label>
+              <input id="q-photo" name="Window photo" type="text" />
+            </div>
+            <div class="field">
+              <label for="q-preferred">Preferred contact method</label>
+              <select id="q-preferred" name="Preferred contact">
+                <option value="Email">Email</option>
+                <option value="Phone call">Phone call</option>
+                <option value="Text">Text</option>
+              </select>
+            </div>
+          </div>
           <div class="grid-2">
             <div class="field">
               <label for="q-email">Email</label>
@@ -934,7 +954,7 @@
           </div>
           <button class="submit-btn" type="submit">Request my quote</button>
           <p class="form-fineprint">No payment with a request. Price and date are confirmed with you first.</p>
-          <p class="form-status">Pressing the button sends this request to the co-op.</p>
+          <p class="form-status">Pressing the button sends this request to the co-op. We reply within 24 hours.</p>
         </form>
 
         <div class="confirm" id="quote-confirm" role="status" tabindex="-1">
@@ -1008,9 +1028,9 @@
           </div>
           <div class="field">
             <label for="a-portfolio">Portfolio link or description
-              <span class="hint">A link to your work, or a few words describing what you paint</span>
+              <span class="hint">A link to your work, or a few words describing what you paint — optional</span>
             </label>
-            <input id="a-portfolio" name="Portfolio" type="text" required />
+            <input id="a-portfolio" name="Portfolio" type="text" />
           </div>
           <div class="field">
             <label for="a-experience">Experience with glass, storefront, or mural work
@@ -1026,7 +1046,7 @@
           </div>
           <button class="submit-btn green" type="submit">Sign up as an artist</button>
           <p class="form-fineprint">Signing up does not commit you to any job — each match is confirmed with you first.</p>
-          <p class="form-status">Pressing the button sends this signup to the co-op.</p>
+          <p class="form-status">Pressing the button sends this signup to the co-op. We reply within 24 hours.</p>
         </form>
 
         <div class="confirm" id="artist-confirm" role="status" tabindex="-1">
@@ -1060,8 +1080,8 @@
             <svg viewBox="0 0 24 24" fill="#1877f2" aria-hidden="true"><path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.09 10.13 24v-8.44H7.08v-3.49h3.04V9.41c0-3.02 1.8-4.7 4.54-4.7 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.95.93-1.95 1.89v2.26h3.32l-.53 3.49h-2.8V24C19.62 23.1 24 18.1 24 12.07z"/></svg>
             Facebook group
           </span>
-          <p>Storefront owners and artists talk shop in the co-op&rsquo;s Facebook group — ideas, seasonal plans, finished windows. The group link goes here.</p>
-          <span class="placeholder-tag">Link placeholder — to be added</span>
+          <p>Storefront owners and artists talk shop in the co-op&rsquo;s community — ideas, seasonal plans, finished windows.</p>
+          
         </div>
       </div>
     </section>
@@ -1115,7 +1135,15 @@
             var firstBad = null;
             cfg.fields.forEach(function (f) {
               var el = form.elements[f.name];
-              if (el && !el.value.trim()) {
+              if (el && el.type === "email" && el.value.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(el.value.trim())) {
+                el.setAttribute("aria-invalid", "true");
+                el.style.borderColor = "var(--red)";
+                if (!firstBad) firstBad = el;
+              } else if (el && el.type === "tel" && el.value.trim() && el.value.replace(/\D/g, "").length < 7) {
+                el.setAttribute("aria-invalid", "true");
+                el.style.borderColor = "var(--red)";
+                if (!firstBad) firstBad = el;
+              } else if (el && !el.value.trim() && el.hasAttribute("required")) {
                 el.setAttribute("aria-invalid", "true");
                 el.style.borderColor = "var(--red)";
                 if (!firstBad) firstBad = el;
@@ -1146,11 +1174,11 @@
                 if (res.ok && data.success !== false) {
                   showConfirm(cfg.sentHeading, cfg.sentBody);
                 } else {
-                  showConfirm(cfg.errorHeading, cfg.errorBody);
+                  alert("That didn\u2019t go through. Your form is still here — press send again.");
                 }
               });
             }).catch(function () {
-              showConfirm(cfg.errorHeading, cfg.errorBody);
+              alert("That didn\u2019t go through. Your form is still here — press send again.");
             }).finally(function () {
               if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = defaultBtnText; }
             });
@@ -1170,6 +1198,9 @@
             { name: "Store name", label: "Store" },
             { name: "Contact name", label: "Contact name" },
             { name: "Town", label: "Town" },
+            { name: "Store address", label: "Store address" },
+            { name: "Window photo", label: "Window photo" },
+            { name: "Preferred contact", label: "Preferred contact" },
             { name: "Email", label: "Email" },
             { name: "Phone", label: "Phone" },
             { name: "Glass / wall size", label: "Glass / wall" },
