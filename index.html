@@ -972,6 +972,16 @@
               <input id="a-town" name="Area covered" type="text" required />
             </div>
           </div>
+          <div class="grid-2">
+            <div class="field">
+              <label for="a-email">Email</label>
+              <input id="a-email" name="Email" type="email" autocomplete="email" required />
+            </div>
+            <div class="field">
+              <label for="a-phone">Phone</label>
+              <input id="a-phone" name="Phone" type="tel" autocomplete="tel" required />
+            </div>
+          </div>
           <div class="field">
             <label for="a-portfolio">Portfolio link or description
               <span class="hint">A link to your work, or a few words describing what you paint</span>
@@ -1152,6 +1162,8 @@
           formId: "artist-form", confirmId: "artist-confirm", summaryId: "artist-summary", againId: "artist-again",
           fields: [
             { name: "Artist name", label: "Name" },
+            { name: "Email", label: "Email" },
+            { name: "Phone", label: "Phone" },
             { name: "Area covered", label: "Area covered" },
             { name: "Portfolio", label: "Portfolio" },
             { name: "Experience", label: "Experience" },
