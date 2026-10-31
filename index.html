@@ -894,17 +894,25 @@
               <input id="q-store" name="Store name" type="text" autocomplete="organization" required />
             </div>
             <div class="field">
+              <label for="q-contact-name">Your full name</label>
+              <input id="q-contact-name" name="Contact name" type="text" autocomplete="name" required />
+            </div>
+            <div class="field">
               <label for="q-town">Town
                 <span class="hint">Spartanburg and the Upstate</span>
               </label>
               <input id="q-town" name="Town" type="text" autocomplete="address-level2" required />
             </div>
           </div>
-          <div class="field">
-            <label for="q-contact">How do we reach you?
-              <span class="hint">A phone number or email — whichever you prefer</span>
-            </label>
-            <input id="q-contact" name="Contact" type="text" autocomplete="email" required />
+          <div class="grid-2">
+            <div class="field">
+              <label for="q-email">Email</label>
+              <input id="q-email" name="Email" type="email" autocomplete="email" required />
+            </div>
+            <div class="field">
+              <label for="q-phone">Phone</label>
+              <input id="q-phone" name="Phone" type="tel" autocomplete="tel" required />
+            </div>
           </div>
           <div class="field">
             <label for="q-glass">Glass size / number of windows
@@ -962,7 +970,7 @@
           <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" />
           <div class="grid-2">
             <div class="field">
-              <label for="a-name">Your name</label>
+              <label for="a-name">Full name (first and last)</label>
               <input id="a-name" name="Artist name" type="text" autocomplete="name" required />
             </div>
             <div class="field">
@@ -980,6 +988,22 @@
             <div class="field">
               <label for="a-phone">Phone</label>
               <input id="a-phone" name="Phone" type="tel" autocomplete="tel" required />
+            </div>
+          </div>
+          <div class="grid-2">
+            <div class="field">
+              <label for="a-social">Instagram / Facebook link
+                <span class="hint">Optional, if you post your work there</span>
+              </label>
+              <input id="a-social" name="Instagram / Facebook" type="text" />
+            </div>
+            <div class="field">
+              <label for="a-preferred">Preferred contact method</label>
+              <select id="a-preferred" name="Preferred contact">
+                <option value="Email">Email</option>
+                <option value="Phone call">Phone call</option>
+                <option value="Text">Text</option>
+              </select>
             </div>
           </div>
           <div class="field">
@@ -1144,8 +1168,10 @@
           formId: "quote-form", confirmId: "quote-confirm", summaryId: "quote-summary", againId: "quote-again",
           fields: [
             { name: "Store name", label: "Store" },
+            { name: "Contact name", label: "Contact name" },
             { name: "Town", label: "Town" },
-            { name: "Contact", label: "Contact" },
+            { name: "Email", label: "Email" },
+            { name: "Phone", label: "Phone" },
             { name: "Glass / wall size", label: "Glass / wall" },
             { name: "Design idea", label: "Design idea" },
             { name: "Timing", label: "Timing" }
@@ -1164,6 +1190,8 @@
             { name: "Artist name", label: "Name" },
             { name: "Email", label: "Email" },
             { name: "Phone", label: "Phone" },
+            { name: "Instagram / Facebook", label: "Instagram / Facebook" },
+            { name: "Preferred contact", label: "Preferred contact" },
             { name: "Area covered", label: "Area covered" },
             { name: "Portfolio", label: "Portfolio" },
             { name: "Experience", label: "Experience" },
